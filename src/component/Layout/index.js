@@ -29,7 +29,7 @@ const Layout = () => {
   const navigate = useNavigate();
   const [path, setPath] = React.useState("");
 
-  const email = sessionStorage.getItem("user");
+  const email = localStorage.getItem("user");
 
   useEffect(() => {
     const pathname = window.location.pathname;
@@ -47,7 +47,7 @@ const Layout = () => {
 
   const handleLogOut = () => {
     navigate("/login");
-    sessionStorage.clear("user");
+    localStorage.clear("user");
   };
 
   return window.location.pathname === "/login" ? (

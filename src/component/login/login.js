@@ -26,7 +26,7 @@ const SignIn = () => {
     if (email !== "" && email.includes("@")) {
       navigate("/posts");
       window.location.reload();
-      sessionStorage.setItem("user", email);
+      localStorage.setItem("user", email);
     }
   };
 

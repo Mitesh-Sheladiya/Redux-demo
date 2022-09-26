@@ -6,6 +6,7 @@ const RoutesCom = () => {
   return (
     <>
       <Routes>
+        <Route path="/" element={<PostData />} />
         <Route path="/posts" element={<PostData />} />
         <Route path="/comments" element={<CommentData />} />
         <Route path="/comments/postId/:id" element={<CommentData />} />
