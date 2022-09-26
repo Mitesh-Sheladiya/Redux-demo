@@ -18,7 +18,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
-import { getCommitData, editItem, getPostData } from "../../store/action";
+import { editItem, getPostData } from "../../store/action";
 
 const columns = [{ id: "title", label: "Title", minWidth: 170 }];
 
@@ -70,10 +70,6 @@ const PostData = () => {
   useEffect(() => {
     dispatch(getPostData());
   }, []); // eslint-disable-line
-
-  const handleComment = (userId) => {
-    dispatch(getCommitData(userId));
-  };
 
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
@@ -140,8 +136,8 @@ const PostData = () => {
 
                           <TableCell key={column.id} align={column.align}>
                             <NavLink
-                              to={`/comments/?postId=${row.id}`}
-                              onClick={() => handleComment(row.id)}
+                              to={`/comments/postId/${row.id}`}
+                              // onClick={() => handleComment(row.id)}
                             >
                               comment
                             </NavLink>

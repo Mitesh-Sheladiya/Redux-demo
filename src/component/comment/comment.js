@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
@@ -23,6 +24,8 @@ const CommentData = () => {
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [path, setPath] = React.useState("");
 
+  let { id } = useParams();
+
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -38,9 +41,7 @@ const CommentData = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (path === "/comments") {
-      dispatch(getCommitData(""));
-    }
+    dispatch(getCommitData(id));
   }, [path]); // eslint-disable-line
 
   const tableCommitData = useSelector((store) => store.tableCommitData);

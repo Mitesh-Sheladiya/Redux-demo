@@ -8,7 +8,7 @@ const RoutesCom = () => {
       <Routes>
         <Route path="/posts" element={<PostData />} />
         <Route path="/comments" element={<CommentData />} />
-        <Route path="/comments?postId=:id" element={<CommentData />} />
+        <Route path="/comments/postId/:id" element={<CommentData />} />
       </Routes>
     </>
   );
